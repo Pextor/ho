@@ -1,5 +1,5 @@
 const words = {
-  A: { word: "Apple", link: "https://example.com/apple" },
+  A: { word: "Alejandra Iko Chuv", link: "https://www.livegore.com/203129/face-cut-in-half-still-alive" },
   B: { word: "Banana", link: "https://example.com/banana" },
   C: { word: "Cat", link: "https://example.com/cat" },
   D: { word: "Dog", link: "https://example.com/dog" },
