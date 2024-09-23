@@ -30,8 +30,6 @@ function showWord(letter) {
   Y: { word: "Yak", link: "https://example.com/yak" },
   Z: { word: "Zebra", link: "https://example.com/zebra" }
 };
-
-    
     // 계속해서 원하는 단어 추가
   };
 
