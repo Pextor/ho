@@ -5,7 +5,7 @@ const words = {
   D: { word: "Dog", link: "https://example.com/dog" },
   E: { word: "Elephant", link: "https://example.com/elephant" },
   F: { word: "Fish", link: "https://example.com/fish" },
-  G: { word: "Giraffe", link: "https://example.com/giraffe" },
+  G: { word: "Gleb Korablyov", link: "https://archive.org/details/0508_20240514" },
   H: { word: "Horse", link: "https://example.com/horse" },
   I: { word: "Ice Cream", link: "https://example.com/icecream" },
   J: { word: "Jaguar", link: "https://example.com/jaguar" },
