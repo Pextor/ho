@@ -10,7 +10,7 @@ const words = {
   I: { word: "Ice Cream", link: "https://example.com/icecream" },
   J: { word: "Jaguar", link: "https://example.com/jaguar" },
   K: { word: "Kangaroo", link: "https://example.com/kangaroo" },
-  L: { word: "Lion", link: "https://example.com/lion" },
+  L: { word: "Living Mexico", link: "https://elblogdelnarco.com/2018/07/26/video-horripilante-donde-sicarios-del-mayo-zambada-le-sacaron-el-corazon-a-un-sujeto-y-a-otro-lo-dec/" },
   M: { word: "Monkey", link: "https://example.com/monkey" },
   N: { word: "Narwhal", link: "https://example.com/narwhal" },
   O: { word: "Octopus", link: "https://example.com/octopus" },
