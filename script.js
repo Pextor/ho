@@ -17,7 +17,7 @@ const words = {
   P: { word: "Penguin", link: "https://example.com/penguin" },
   Q: { word: "Quokka", link: "https://example.com/quokka" },
   R: { word: "Rabbit", link: "https://example.com/rabbit" },
-  S: { word: "Shark", link: "https://example.com/shark" },
+  S: { word: "sponsored by adidas", "https://www.vidlii.com/watch?v=yLDszwQxqvr" },
   T: { word: "Tiger", link: "https://example.com/tiger" },
   U: { word: "Unicorn", link: "https://example.com/unicorn" },
   V: { word: "Vulture", link: "https://example.com/vulture" },
