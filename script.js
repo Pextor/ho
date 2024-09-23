@@ -29,8 +29,7 @@ function showWord(letter) {
   X: { word: "Xerus", link: "https://example.com/xerus" }, // 이런 식으로
   Y: { word: "Yak", link: "https://example.com/yak" },
   Z: { word: "Zebra", link: "https://example.com/zebra" }
-};
-    // 계속해서 원하는 단어 추가
+}; // 계속해서 원하는 단어 추가
   };
 
   if (words[letter]) {
