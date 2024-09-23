@@ -1,44 +1,15 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>알파벳 버튼 사이트</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단어 검색기</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-  <h1>A ~ Z 버튼 클릭 사이트</h1>
-
-  <div class="buttons">
-    <button onclick="showWord('A')">A</button>
-    <button onclick="showWord('B')">B</button>
-    <button onclick="showWord('C')">C</button>
-    <!-- 계속해서 Z까지 버튼 추가 -->
-  </div>
-
-  <div id="word-display"></div>
-
-  <script src="script.js"></script>
+    <h1>단어 검색기</h1>
+    <input type="text" id="searchInput" onkeyup="searchWord()" placeholder="단어를 입력하세요...">
+    <div id="search-results"></div>
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>단어 검색 기능</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <h1>단어 검색 사이트</h1>
-
-  <div class="search-bar">
-    <input type="text" id="searchInput" placeholder="단어를 입력하세요" oninput="searchWord()" />
-  </div>
-
-  <div id="search-results"></div>
-
-  <script src="script.js"></script>
-</body>
-</html>
-
