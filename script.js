@@ -31,13 +31,15 @@ const words = {
 function searchByLetter(letter) {
   const searchResults = document.getElementById('search-results');
   searchResults.innerHTML = '';  // 검색 결과 초기화
-  const { word, link } = words[letter];
-  if (word) {
+  const result = words[letter];
+  if (result) {
+    const { word, link } = result;
     searchResults.innerHTML = `<a href="${link}" target="_blank">${word}</a>`;
   } else {
     searchResults.textContent = '검색 결과가 없습니다.';
   }
 }
+
 
 function searchWord() {
   const input = document.getElementById('searchInput').value.toUpperCase();
