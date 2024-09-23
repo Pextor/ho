@@ -1,5 +1,3 @@
-/* script.js */
-
 const words = {
   A: { word: "Apple", link: "https://example.com/apple" },
   B: { word: "Banana", link: "https://example.com/banana" },
