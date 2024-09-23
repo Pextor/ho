@@ -27,6 +27,17 @@ const words = {
   Z: { word: "Zebra", link: "https://example.com/zebra" }
 };
 
+function searchByLetter(letter) {
+  const searchResults = document.getElementById('search-results');
+  searchResults.innerHTML = '';  // 검색 결과 초기화
+  const { word, link } = words[letter];
+  if (word) {
+    searchResults.innerHTML = `<a href="${link}" target="_blank">${word}</a>`;
+  } else {
+    searchResults.textContent = '검색 결과가 없습니다.';
+  }
+}
+
 function searchWord() {
   const input = document.getElementById('searchInput').value.toUpperCase();
   const searchResults = document.getElementById('search-results');
