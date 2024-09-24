@@ -3,6 +3,7 @@ const words = {
   B: { word: "Best Gore Fun", link: "https://www.bsetgore.fun" },
   C: { word: "Cat", link: "https://example.com/cat" },
   D: { word: "Daily Best", link: "https://ilbe.com" },
+  D1: { word: "DuckDuckGo", link: "https://www.duckduckgo.com" },
   E: { word: "Elephant", link: "https://example.com/elephant" },
   F: { word: "Fish", link: "https://example.com/fish" },
   G: { word: "Gleb Korablyov", link: "https://archive.org/details/0508_20240514" },
