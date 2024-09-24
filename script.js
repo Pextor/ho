@@ -12,6 +12,7 @@ const words = {
   J: { word: "Jaguar", link: "https://example.com/jaguar" },
   K: { word: "Kangaroo", link: "https://example.com/kangaroo" },
   L: { word: "Living Mexico", link: "https://elblogdelnarco.com/2018/07/26/video-horripilante-donde-sicarios-del-mayo-zambada-le-sacaron-el-corazon-a-un-sujeto-y-a-otro-lo-dec/" },
+  L1: { word: "LiveGore", link: "https://www.livegore.com" },
   M: { word: "Monkey", link: "https://example.com/monkey" },
   N: { word: "Naver", link: "https://www.naver.com" },
   O: { word: "Octopus", link: "https://example.com/octopus" },
