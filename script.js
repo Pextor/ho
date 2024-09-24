@@ -1,6 +1,6 @@
 const words = {
   A: { word: "Alejandra Iko Chuv", link: "https://www.livegore.com/203129/face-cut-in-half-still-alive" },
-  B: { word: "Banana", link: "https://example.com/banana" },
+  B: { word: "Best Gore Fun", link: "https://www.bsetgore.fun" },
   C: { word: "Cat", link: "https://example.com/cat" },
   D: { word: "Daily Best", link: "https://ilbe.com" },
   E: { word: "Elephant", link: "https://example.com/elephant" },
@@ -25,6 +25,7 @@ const words = {
   W: { word: "Whale", link: "https://example.com/whale" },
   X: { word: "Xerus", link: "https://example.com/xerus" },
   Y: { word: "Youtube", link: "https://www.youtube.com" },
+  Y1: { word: "Yadong Korea", link: "https://www.yako.red" },
   Z: { word: "Zebra", link: "https://example.com/zebra" }
 };
 
