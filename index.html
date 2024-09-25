@@ -3,121 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>사이트 폐쇄 안내</title>
+    <title>원하는 사이트 검색</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 100vh;
-            background-color: #f2f2f2;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            color: #333;
-        }
-        .container {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            max-width: 500px;
-        }
-        h1 {
-            color: #e74c3c;
-            font-size: 24px;
-        }
-        .warning {
-            color: #e74c3c;
-            font-size: 20px;
-            font-weight: bold;
-            margin-top: 20px;
-            text-transform: uppercase;
-        }
-        .message {
-            margin-top: 10px;
-            font-size: 16px;
-        }
-        .notice {
-            color: #555;
-            margin-top: 30px;
-            font-size: 14px;
-        }
-        #buttons button {
-            margin: 5px;
-            padding: 10px 15px;
-            background-color: #e74c3c;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: not-allowed;
-            opacity: 0.6;
-        }
-        #searchInput {
-            padding: 10px;
-            width: 100%;
-            margin-top: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-            color: #999;
-            cursor: not-allowed;
-            opacity: 0.6;
-        }
-        .police-seal {
-            width: 100px;
-            margin: 20px auto;
-            opacity: 0.7;
-        }
-    </style>
-    <script>
-        // 페이지가 로드될 때 메시지를 표시
-        window.onload = function() {
-            alert("한•미•영•독에 공조수사로 이사이트는 폐쇄되었습니다.");
-        };
-    </script>
 </head>
 <body>
-    <div class="container">
-        <h1>사이트 폐쇄 안내</h1>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Police_seal.svg/1200px-Police_seal.svg.png" alt="경찰 마크" class="police-seal">
-        <p class="warning">이 사이트는 폐쇄되었습니다!</p>
-        <p class="message">현재 한•미•영•독 공조 수사 중입니다.</p>
-        
-        <input type="text" id="searchInput" placeholder="단어를 입력하세요..." disabled>
+    <h1>원하는 사이트 검색</h1>
+    <p>𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙩𝙤 𝙀𝙧𝙚𝙗𝙪𝙨!</p>
 
-        <div id="buttons">
-            <button disabled>A</button>
-            <button disabled>B</button>
-            <button disabled>C</button>
-            <button disabled>D</button>
-            <button disabled>E</button>
-            <button disabled>F</button>
-            <button disabled>G</button>
-            <button disabled>H</button>
-            <button disabled>I</button>
-            <button disabled>J</button>
-            <button disabled>K</button>
-            <button disabled>L</button>
-            <button disabled>M</button>
-            <button disabled>N</button>
-            <button disabled>O</button>
-            <button disabled>P</button>
-            <button disabled>Q</button>
-            <button disabled>R</button>
-            <button disabled>S</button>
-            <button disabled>T</button>
-            <button disabled>U</button>
-            <button disabled>V</button>
-            <button disabled>W</button>
-            <button disabled>X</button>
-            <button disabled>Y</button>
-            <button disabled>Z</button>
-        </div>
+    <input type="text" id="searchInput" onkeyup="searchWord()" placeholder="단어를 입력하세요...">
 
-        <div id="search-results"></div>
+    <div id="buttons">
+        <button onclick="searchByLetter('A')">A</button>
+        <button onclick="searchByLetter('B')">B</button>
+        <button onclick="searchByLetter('C')">C</button>
+        <button onclick="searchByLetter('D')">D</button>
+        <button onclick="searchByLetter('E')">E</button>
+        <button onclick="searchByLetter('F')">F</button>
+        <button onclick="searchByLetter('G')">G</button>
+        <button onclick="searchByLetter('H')">H</button>
+        <button onclick="searchByLetter('I')">I</button>
+        <button onclick="searchByLetter('J')">J</button>
+        <button onclick="searchByLetter('K')">K</button>
+        <button onclick="searchByLetter('L')">L</button>
+        <button onclick="searchByLetter('M')">M</button>
+        <button onclick="searchByLetter('N')">N</button>
+        <button onclick="searchByLetter('O')">O</button>
+        <button onclick="searchByLetter('P')">P</button>
+        <button onclick="searchByLetter('Q')">Q</button>
+        <button onclick="searchByLetter('R')">R</button>
+        <button onclick="searchByLetter('S')">S</button>
+        <button onclick="searchByLetter('T')">T</button>
+        <button onclick="searchByLetter('U')">U</button>
+        <button onclick="searchByLetter('V')">V</button>
+        <button onclick="searchByLetter('W')">W</button>
+        <button onclick="searchByLetter('X')">X</button>
+        <button onclick="searchByLetter('Y')">Y</button>
+        <button onclick="searchByLetter('Z')">Z</button>
     </div>
+
+    <div id="search-results"></div>
 </body>
 </html>
