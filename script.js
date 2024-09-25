@@ -1,8 +1,24 @@
-// 페이지가 로드되면, 경고 메시지를 표시합니다.
-window.onload = function() {
-    alert("이 사이트는 폐쇄되었습니다. 사용에 유의하시기 바랍니다.");
-};
+body {
+    background-color: black;
+    color: red;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 50px;
+}
 
-// 경고 페이지로 리디렉션 설정
-window.location.href = "https://pextor.github.io/ho/폐쇄경고.html"; //
+h1 {
+    font-size: 3rem;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+.warning {
+    color: white;
+    background-color: red;
+    padding: 20px;
+    margin-top: 30px;
+}
+
 
