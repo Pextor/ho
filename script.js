@@ -25,7 +25,7 @@ const words = {
   U: { word: "Ukraine 21", link: "https://watchpeopledie.tv/h/beating/post/24683/3-guys-1-hammer-theync-and" },
   V: { word: "Vulture", link: "https://example.com/vulture" },
   W: { word: "Whale", link: "https://example.com/whale" },
-  X: { word: "Xerus", link: "https://example.com/xerus" },
+  X: { word: "X Video", link: "https://www.xvideo.com" },
   Y: { word: "Youtube", link: "https://www.youtube.com" },
   Y1: { word: "Yadong Korea", link: "https://www.yako.red" },
   Z: { word: "Zebra", link: "https://example.com/zebra" }
