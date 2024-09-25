@@ -11,7 +11,7 @@ const words = {
   H: { word: "Horse", link: "https://example.com/horse" },
   I: { word: "Instagram", link: "https://www.instagram.com" },
   J: { word: "Jaguar", link: "https://example.com/jaguar" },
-  K: { word: "Kangaroo", link: "https://example.com/kangaroo" },
+  K: { word: "Knife M", link: "https://www.youtube.com/redirect?event=backstage_event&redir_token=QUFFLUhqbndSTS1WLVl0YmNZYXdfc2puUmF5XzF3Vm9Gd3xBQ3Jtc0trczJPX090bm1PSnZBUGJQaV82U19zRmdpdEtvOVI3MVk4XzRObFpFTnk1S3JOa1pUc3Jib25ZamFNTE81NXN5RHllU0wxWVFSSTFkb2hiY3lJdnZuQXJGVWFMSXB1aFNGYm4yT0tnUzA5Q2REazJxZw&q=https%3A%2F%2Fwatchpeopledie.tv%2Fh%2Fselfharm%2Fpost%2F24762%2Fknife-vag" },
   L: { word: "Living Mexico", link: "https://elblogdelnarco.com/2018/07/26/video-horripilante-donde-sicarios-del-mayo-zambada-le-sacaron-el-corazon-a-un-sujeto-y-a-otro-lo-dec/" },
   L1: { word: "LiveGore", link: "https://www.livegore.com" },
   M: { word: "Monkey", link: "https://example.com/monkey" },
