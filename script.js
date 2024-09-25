@@ -6,6 +6,7 @@ const words = {
   D1: { word: "DuckDuckGo", link: "https://www.duckduckgo.com" },
   E: { word: "Elephant", link: "https://example.com/elephant" },
   F: { word: "FaceBook", link: "https://www.facebook.com" },
+  F1: { word: "FunkyTown", link: "https://www.wjswogkr.com" },
   G: { word: "Gleb Korablyov", link: "https://archive.org/details/0508_20240514" },
   G1: { word: "Google", link: "https://www.google.com" },
   H: { word: "Horse", link: "https://example.com/horse" },
