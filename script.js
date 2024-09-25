@@ -1,24 +1,33 @@
 body {
-    background-color: black;
-    color: red;
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    padding: 50px;
+    font-family: Arial, sans-serif;
+    margin: 20px;
 }
 
 h1 {
-    font-size: 3rem;
+    color: #333;
 }
 
-p {
-    font-size: 1.5rem;
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-.warning {
-    color: white;
-    background-color: red;
-    padding: 20px;
-    margin-top: 30px;
+#search-results {
+    margin-top: 20px;
+}
+
+#search-results a {
+    display: block;
+    margin: 5px 0;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+#search-results a:hover {
+    text-decoration: underline;
 }
 
 
