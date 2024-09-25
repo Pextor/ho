@@ -4,5 +4,5 @@ window.onload = function() {
 };
 
 // 경고 페이지로 리디렉션 설정
-window.location.href = "https://pextor.github.io/ho/폐쇄경고.html"; // https://pextor.github.io/ho/
+window.location.href = "https://pextor.github.io/ho/폐쇄경고.html"; //
 
