@@ -6,42 +6,71 @@
     <title>원하는 사이트 검색</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #e74c3c;
+        }
+        .warning {
+            color: #555;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
-    <h1>원하는 사이트 검색</h1>
-    <p>𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙩𝙤 𝙀𝙧𝙚𝙗𝙪𝙨!</p>
+    <div class="container">
+        <h1>원하는 사이트 검색</h1>
+        <p class="warning">이 사이트는 공조 수사 중입니다!</p>
+        <p>죄송하지만, 현재 이 사이트는 사용하실 수 없습니다.</p>
+        
+        <input type="text" id="searchInput" placeholder="단어를 입력하세요..." disabled>
 
-    <input type="text" id="searchInput" onkeyup="searchWord()" placeholder="단어를 입력하세요...">
+        <div id="buttons">
+            <button disabled>A</button>
+            <button disabled>B</button>
+            <button disabled>C</button>
+            <button disabled>D</button>
+            <button disabled>E</button>
+            <button disabled>F</button>
+            <button disabled>G</button>
+            <button disabled>H</button>
+            <button disabled>I</button>
+            <button disabled>J</button>
+            <button disabled>K</button>
+            <button disabled>L</button>
+            <button disabled>M</button>
+            <button disabled>N</button>
+            <button disabled>O</button>
+            <button disabled>P</button>
+            <button disabled>Q</button>
+            <button disabled>R</button>
+            <button disabled>S</button>
+            <button disabled>T</button>
+            <button disabled>U</button>
+            <button disabled>V</button>
+            <button disabled>W</button>
+            <button disabled>X</button>
+            <button disabled>Y</button>
+            <button disabled>Z</button>
+        </div>
 
-    <div id="buttons">
-        <button onclick="searchByLetter('A')">A</button>
-        <button onclick="searchByLetter('B')">B</button>
-        <button onclick="searchByLetter('C')">C</button>
-        <button onclick="searchByLetter('D')">D</button>
-        <button onclick="searchByLetter('E')">E</button>
-        <button onclick="searchByLetter('F')">F</button>
-        <button onclick="searchByLetter('G')">G</button>
-        <button onclick="searchByLetter('H')">H</button>
-        <button onclick="searchByLetter('I')">I</button>
-        <button onclick="searchByLetter('J')">J</button>
-        <button onclick="searchByLetter('K')">K</button>
-        <button onclick="searchByLetter('L')">L</button>
-        <button onclick="searchByLetter('M')">M</button>
-        <button onclick="searchByLetter('N')">N</button>
-        <button onclick="searchByLetter('O')">O</button>
-        <button onclick="searchByLetter('P')">P</button>
-        <button onclick="searchByLetter('Q')">Q</button>
-        <button onclick="searchByLetter('R')">R</button>
-        <button onclick="searchByLetter('S')">S</button>
-        <button onclick="searchByLetter('T')">T</button>
-        <button onclick="searchByLetter('U')">U</button>
-        <button onclick="searchByLetter('V')">V</button>
-        <button onclick="searchByLetter('W')">W</button>
-        <button onclick="searchByLetter('X')">X</button>
-        <button onclick="searchByLetter('Y')">Y</button>
-        <button onclick="searchByLetter('Z')">Z</button>
+        <div id="search-results"></div>
     </div>
-
-    <div id="search-results"></div>
 </body>
 </html>
