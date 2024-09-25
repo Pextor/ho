@@ -1,7 +1,7 @@
 const words = {
   A: { word: "Alejandra Iko Chuv", link: "https://www.livegore.com/203129/face-cut-in-half-still-alive" },
   B: { word: "Best Gore Fun", link: "https://www.bsetgore.fun" },
-  C: { word: "Cat", link: "https://example.com/cat" },
+  C: { word: "CIVI", link: "https://civitai.com/models/7563/alice-nikke" },
   D: { word: "Daily Best", link: "https://ilbe.com" },
   D1: { word: "DuckDuckGo", link: "https://www.duckduckgo.com" },
   E: { word: "Elephant", link: "https://example.com/elephant" },
