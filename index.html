@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>원하는 사이트 검색</title>
+    <title>사이트 폐쇄 안내</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <style>
@@ -16,28 +16,75 @@
             background-color: #f2f2f2;
             font-family: Arial, sans-serif;
             text-align: center;
+            color: #333;
         }
         .container {
             background-color: #fff;
-            padding: 30px;
+            padding: 40px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
         }
         h1 {
             color: #e74c3c;
+            font-size: 24px;
         }
         .warning {
-            color: #555;
+            color: #e74c3c;
+            font-size: 20px;
+            font-weight: bold;
             margin-top: 20px;
-            font-size: 18px;
+            text-transform: uppercase;
+        }
+        .message {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        .notice {
+            color: #555;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+        #buttons button {
+            margin: 5px;
+            padding: 10px 15px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+        #searchInput {
+            padding: 10px;
+            width: 100%;
+            margin-top: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            color: #999;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+        .police-seal {
+            width: 100px;
+            margin: 20px auto;
+            opacity: 0.7;
         }
     </style>
+    <script>
+        // 페이지가 로드될 때 메시지를 표시
+        window.onload = function() {
+            alert("한•미•영•독에 공조수사로 이사이트는 폐쇄되었습니다.");
+        };
+    </script>
 </head>
 <body>
     <div class="container">
-        <h1>원하는 사이트 검색</h1>
-        <p class="warning">이 사이트는 공조 수사 중입니다!</p>
-        <p>죄송하지만, 현재 이 사이트는 사용하실 수 없습니다.</p>
+        <h1>사이트 폐쇄 안내</h1>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Police_seal.svg/1200px-Police_seal.svg.png" alt="경찰 마크" class="police-seal">
+        <p class="warning">이 사이트는 폐쇄되었습니다!</p>
+        <p class="message">현재 한•미•영•독 공조 수사 중입니다.</p>
         
         <input type="text" id="searchInput" placeholder="단어를 입력하세요..." disabled>
 
