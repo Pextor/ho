@@ -3,45 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>원하는 사이트 검색</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <title>Service Termination Notice</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        .warning-box {
+            text-align: center;
+            background-color: #1c1c1c;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.7);
+            border: 2px solid red;
+            animation: flicker 1.5s infinite;
+        }
+        @keyframes flicker {
+            0% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.2); }
+            50% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.7); }
+            100% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.2); }
+        }
+        h1 {
+            font-size: 42px;
+            color: red;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 5px black;
+        }
+        p {
+            font-size: 20px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .important {
+            color: yellow;
+            font-weight: bold;
+        }
+        .fbi-logo {
+            margin-bottom: 20px;
+        }
+        .fbi-message {
+            font-size: 18px;
+            color: red;
+            margin-top: 20px;
+        }
+        .developer-message {
+            margin-top: 40px;
+            font-size: 18px;
+            color: #ccc;
+        }
+        a {
+            color: #00f;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>원하는 사이트 검색</h1>
-    <p>𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙩𝙤 𝙀𝙧𝙚𝙗𝙪𝙨!</p>
-
-    <input type="text" id="searchInput" onkeyup="searchWord()" placeholder="단어를 입력하세요...">
-
-    <div id="buttons">
-        <button onclick="searchByLetter('A')">A</button>
-        <button onclick="searchByLetter('B')">B</button>
-        <button onclick="searchByLetter('C')">C</button>
-        <button onclick="searchByLetter('D')">D</button>
-        <button onclick="searchByLetter('E')">E</button>
-        <button onclick="searchByLetter('F')">F</button>
-        <button onclick="searchByLetter('G')">G</button>
-        <button onclick="searchByLetter('H')">H</button>
-        <button onclick="searchByLetter('I')">I</button>
-        <button onclick="searchByLetter('J')">J</button>
-        <button onclick="searchByLetter('K')">K</button>
-        <button onclick="searchByLetter('L')">L</button>
-        <button onclick="searchByLetter('M')">M</button>
-        <button onclick="searchByLetter('N')">N</button>
-        <button onclick="searchByLetter('O')">O</button>
-        <button onclick="searchByLetter('P')">P</button>
-        <button onclick="searchByLetter('Q')">Q</button>
-        <button onclick="searchByLetter('R')">R</button>
-        <button onclick="searchByLetter('S')">S</button>
-        <button onclick="searchByLetter('T')">T</button>
-        <button onclick="searchByLetter('U')">U</button>
-        <button onclick="searchByLetter('V')">V</button>
-        <button onclick="searchByLetter('W')">W</button>
-        <button onclick="searchByLetter('X')">X</button>
-        <button onclick="searchByLetter('Y')">Y</button>
-        <button onclick="searchByLetter('Z')">Z</button>
+    <div class="fbi-logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/FBILogo.png" alt="FBI Logo" width="200">
     </div>
-
-    <div id="search-results"></div>
+    <div class="warning-box">
+        <h1>Service Termination Notice</h1>
+        <p>Warning: The <span class="important">Mydoom malware</span> has been detected on this site.</p>
+        <p>As a result, we are <span class="important">terminating the service immediately</span> to ensure user safety.</p>
+        <p>Please refrain from further access and check your system with appropriate <span class="important">security software</span>.</p>
+        <p>We apologize for the inconvenience.</p>
+    </div>
+    <div class="fbi-message">
+        <p>This is the Federal Bureau of Investigation.</p>
+        <p>Use of this site may result in a summons to the United States, a fine of 30 million won, and 15 years of imprisonment.</p>
+        <p>– Lloyd Austin</p>
+    </div>
+    <div class="developer-message">
+        <p>개발자: 불편을 드려 죄송합니다. 다른 사이트 있으니 그 사이트를 이용해 주시면 감사하겠습니다. <a href="https://pextor.github.io/Index-of/" target="_blank">https://pextor.github.io/Index-of/</a></p>
+    </div>
 </body>
 </html>
