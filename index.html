@@ -65,7 +65,15 @@
 
     <script>
         // 목표 날짜 설정 (298일 후)
-        const targetDate = new Date(Date.now() + 298 * 24 * 60 * 60 * 1000);
+        const defaultDays = 298;
+        const targetDate = localStorage.getItem('targetDate') 
+            ? new Date(localStorage.getItem('targetDate')) 
+            : new Date(Date.now() + defaultDays * 24 * 60 * 60 * 1000);
+
+        // targetDate 저장
+        if (!localStorage.getItem('targetDate')) {
+            localStorage.setItem('targetDate', targetDate);
+        }
 
         function updateCountdown() {
             const now = new Date();
@@ -83,6 +91,7 @@
 
         // 매초 업데이트
         setInterval(updateCountdown, 1000);
+        updateCountdown(); // 초기 카운트 업데이트
     </script>
 </body>
 </html>
