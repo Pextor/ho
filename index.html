@@ -1,47 +1,66 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>원하는 사이트 검색</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <title>Whispers from the Abyss</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            text-align: center;
+        }
+        .content {
+            max-width: 600px;
+            margin: auto;
+        }
+        img {
+            max-width: 100px; /* Adjust logo size */
+            margin-bottom: 20px;
+        }
+        .arabic {
+            color: #00FF00; /* 아랍어: 초록색 */
+        }
+        .chinese {
+            color: red; /* 중국어: 빨간색 */
+        }
+        .greek {
+            color: yellow; /* 그리스어: 노란색 */
+        }
+        .spanish {
+            color: purple; /* 스페인어: 보라색 */
+        }
+        .countdown {
+            color: white;
+            font-weight: bold;
+            font-size: 1.5em;
+            opacity: 0.7; /* 약간 투명하게 */
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>원하는 사이트 검색</h1>
-    <p>𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙩𝙤 𝙀𝙧𝙚𝙗𝙪𝙨!</p>
-
-    <input type="text" id="searchInput" onkeyup="searchWord()" placeholder="단어를 입력하세요...">
-
-    <div id="buttons">
-        <button onclick="searchByLetter('A')">A</button>
-        <button onclick="searchByLetter('B')">B</button>
-        <button onclick="searchByLetter('C')">C</button>
-        <button onclick="searchByLetter('D')">D</button>
-        <button onclick="searchByLetter('E')">E</button>
-        <button onclick="searchByLetter('F')">F</button>
-        <button onclick="searchByLetter('G')">G</button>
-        <button onclick="searchByLetter('H')">H</button>
-        <button onclick="searchByLetter('I')">I</button>
-        <button onclick="searchByLetter('J')">J</button>
-        <button onclick="searchByLetter('K')">K</button>
-        <button onclick="searchByLetter('L')">L</button>
-        <button onclick="searchByLetter('M')">M</button>
-        <button onclick="searchByLetter('N')">N</button>
-        <button onclick="searchByLetter('O')">O</button>
-        <button onclick="searchByLetter('P')">P</button>
-        <button onclick="searchByLetter('Q')">Q</button>
-        <button onclick="searchByLetter('R')">R</button>
-        <button onclick="searchByLetter('S')">S</button>
-        <button onclick="searchByLetter('T')">T</button>
-        <button onclick="searchByLetter('U')">U</button>
-        <button onclick="searchByLetter('V')">V</button>
-        <button onclick="searchByLetter('W')">W</button>
-        <button onclick="searchByLetter('X')">X</button>
-        <button onclick="searchByLetter('Y')">Y</button>
-        <button onclick="searchByLetter('Z')">Z</button>
+    <div class="content">
+        <img src="URL_TO_YOUR_LOGO" alt="Demon Logo">
+        <h1>Whispers from the Abyss</h1>
+        <p>
+            "Hey, 친구야! 최근에 흥미로운 책을 발견했어. 인간의 두려움이 얼마나 강력한 힘인지에 대해 이야기하고 있었어. 우리가 간과할 수 있는 탐욕과 욕망, 그리고 불안 같은 것들이 결국 우리를 지배하게 된다는 거야. 
+            너도 그 생각 해본 적 있어? 믿음을 잃은 자에게는 구원이 없다고 하더라. 나는 가끔 이런 생각을 해. 우리가 내면에 숨기고 있는 악마가 누구인지. 정말로 깊이 파고들면, 우리 스스로가 선택할 수 있는 길은 많지 않다는 걸 깨달을지도 몰라. 
+            언젠가 우리 함께 이 책의 내용을 더 깊이 탐구해보자. 너와의 대화는 항상 나에게 많은 영감을 주니까! 그럼, 다음에 보자!"
+        </p>
+        <p>
+            <span class="spanish">Humanos, </span>
+            <span class="chinese">你们的恐惧是我的力量. </span>
+            <span class="spanish">La avaricia y el deseo, </span>
+            <span class="arabic">و القلق هو ما سيسيطر عليكم. </span>
+            <span class="arabic">في النهاية، سيقودكم إلي. </span>
+            <span class="greek">Δεν υπάρχει σωτηρία για όσους χάνουν την πίστη τους. </span>
+            <span class="greek">Είμαι ο δαίμονας που κοιμάται μέσα σας, </span>
+            <span class="spanish">el único camino που μπορείτε να تختار. </span>
+        </p>
+        <p class="countdown">298 days Left</p>
     </div>
-
-    <div id="search-results"></div>
 </body>
 </html>
