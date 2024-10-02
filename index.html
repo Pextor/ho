@@ -17,33 +17,33 @@
             margin: auto;
         }
         img {
-            max-width: 100px; /* Adjust logo size */
+            max-width: 100px;
             margin-bottom: 20px;
         }
         .arabic {
-            color: #00FF00; /* 아랍어: 초록색 */
+            color: #00FF00;
         }
         .chinese {
-            color: red; /* 중국어: 빨간색 */
+            color: red;
         }
         .greek {
-            color: yellow; /* 그리스어: 노란색 */
+            color: yellow;
         }
         .spanish {
-            color: purple; /* 스페인어: 보라색 */
+            color: purple;
         }
         .countdown {
             color: white;
             font-weight: bold;
             font-size: 1.5em;
-            opacity: 0.7; /* 약간 투명하게 */
+            opacity: 0.7;
             margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <div class="content">
-        <img src="https://kr.pinterest.com/pin/598345500526684084#imgViewer" alt="">
+        <img src="URL_TO_YOUR_LOGO" alt="Demon Logo">
         <h1>Whispers from the Abyss</h1>
         <p>
             "Hey, 친구야! 최근에 흥미로운 책을 발견했어. 인간의 두려움이 얼마나 강력한 힘인지에 대해 이야기하고 있었어. 우리가 간과할 수 있는 탐욕과 욕망, 그리고 불안 같은 것들이 결국 우리를 지배하게 된다는 거야. 
@@ -60,7 +60,29 @@
             <span class="greek">Είμαι ο δαίμονας που κοιμάται μέσα σας, </span>
             <span class="spanish">el único camino που μπορείτε να تختار. </span>
         </p>
-        <p class="countdown">298 days Left</p>
+        <p class="countdown" id="countdown">298 days Left</p>
     </div>
+
+    <script>
+        // 목표 날짜 설정 (298일 후)
+        const targetDate = new Date(Date.now() + 298 * 24 * 60 * 60 * 1000);
+
+        function updateCountdown() {
+            const now = new Date();
+            const timeLeft = targetDate - now;
+
+            // 시간 단위 계산
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            // 카운트다운 표시
+            document.getElementById('countdown').innerText = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds Left`;
+        }
+
+        // 매초 업데이트
+        setInterval(updateCountdown, 1000);
+    </script>
 </body>
 </html>
