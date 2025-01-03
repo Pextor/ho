@@ -1,97 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Whispers from the Abyss</title>
+    <title>사이트 폐쇄 공지</title>
     <style>
         body {
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            font-family: "Noto Sans KR", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
             padding: 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #d32f2f;
             text-align: center;
         }
-        .content {
-            max-width: 600px;
-            margin: auto;
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            text-align: center;
         }
-        img {
-            max-width: 100px;
-            margin-bottom: 20px;
-        }
-        .arabic {
-            color: #00FF00;
-        }
-        .chinese {
-            color: red;
-        }
-        .greek {
-            color: yellow;
-        }
-        .spanish {
-            color: purple;
-        }
-        .countdown {
-            color: white;
+        .notice {
+            margin: 20px 0;
             font-weight: bold;
-            font-size: 1.5em;
-            opacity: 0.7;
-            margin-top: 20px;
+            text-align: center;
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            text-align: center;
+            color: #555;
         }
     </style>
 </head>
 <body>
-    <div class="content">
-        <img src="" alt="">
-        <h1>Whispers from the Abyss</h1>
+    <div class="container">
+        <h1>국제 공조 수사에 따른 사이트 폐쇄</h1>
         <p>
-            "Hey, 친구야! 최근에 흥미로운 책을 발견했어. 인간의 두려움이 얼마나 강력한 힘인지에 대해 이야기하고 있었어. 우리가 간과할 수 있는 탐욕과 욕망, 그리고 불안 같은 것들이 결국 우리를 지배하게 된다는 거야. 
-            너도 그 생각 해본 적 있어? 믿음을 잃은 자에게는 구원이 없다고 하더라. 나는 가끔 이런 생각을 해. 우리가 내면에 숨기고 있는 악마가 누구인지. 정말로 깊이 파고들면, 우리 스스로가 선택할 수 있는 길은 많지 않다는 걸 깨달을지도 몰라. 
-            언젠가 우리 함께 이 책의 내용을 더 깊이 탐구해보자. 너와의 대화는 항상 나에게 많은 영감을 주니까! 그럼, 다음에 보자!"
+            본 사이트는 <strong>국제형사경찰기구(INTERPOL)</strong> 및<br>
+            <strong>국내 수사기관</strong>의 공조 수사 결과<br>
+            관련 법률 위반 사항이 확인되어 폐쇄되었습니다.
         </p>
-        <p>
-            <span class="spanish">Humanos, </span>
-            <span class="chinese">你们的恐惧是我的力量. </span>
-            <span class="spanish">La avaricia y el deseo, </span>
-            <span class="arabic">و القلق هو ما سيسيطر عليكم. </span>
-            <span class="arabic">في النهاية، سيقودكم إلي. </span>
-            <span class="greek">Δεν υπάρχει σωτηρία για όσους χάνουν την πίστη τους. </span>
-            <span class="greek">Είμαι ο δαίμονας που κοιμάται μέσα σας, </span>
-            <span class="spanish">el único camino που μπορείτε να تختار. </span>
+        <p class="notice">
+            해당 사건과 관련하여 궁금한 점이 있으신 분은<br>
+            관할 수사기관에 문의하시기 바랍니다.
         </p>
-        <p class="countdown" id="countdown">298 days Left</p>
+        <footer>
+            ⓒ 2025 INTERPOL & 국내 수사기관. All Rights Reserved.
+        </footer>
     </div>
-
-    <script>
-        // 목표 날짜 설정 (298일 후)
-        const defaultDays = 298;
-        const targetDate = localStorage.getItem('targetDate') 
-            ? new Date(localStorage.getItem('targetDate')) 
-            : new Date(Date.now() + defaultDays * 24 * 60 * 60 * 1000);
-
-        // targetDate 저장
-        if (!localStorage.getItem('targetDate')) {
-            localStorage.setItem('targetDate', targetDate);
-        }
-
-        function updateCountdown() {
-            const now = new Date();
-            const timeLeft = targetDate - now;
-
-            // 시간 단위 계산
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-            // 카운트다운 표시
-            document.getElementById('countdown').innerText = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds Left`;
-        }
-
-        // 매초 업데이트
-        setInterval(updateCountdown, 1000);
-        updateCountdown(); // 초기 카운트 업데이트
-    </script>
 </body>
 </html>
