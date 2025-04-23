@@ -1,122 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>원하는 사이트 검색</title>
-  <!-- CSS 연결 -->
-  <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>원하는 사이트 검색</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
 
-    h1 {
-        color: #333;
-    }
+        h1 {
+            color: #333;
+        }
 
-    h2 {
-        font-size: 1.2rem;
-        color: #555;
-        margin-bottom: 20px;
-    }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
 
-    input[type="text"] {
-        width: 100%;
-        padding: 10px;
-        margin: 10px 0;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
+        #search-results {
+            margin-top: 20px;
+        }
 
-    #search-results {
-        margin-top: 20px;
-    }
+        #search-results a {
+            display: block;
+            margin: 5px 0;
+            color: #007BFF;
+            text-decoration: none;
+        }
 
-    #search-results a {
-        display: block;
-        margin: 5px 0;
-        color: #007BFF;
-        text-decoration: none;
-    }
+        #search-results a:hover {
+            text-decoration: underline;
+        }
 
-    #search-results a:hover {
-        text-decoration: underline;
-    }
-  </style>
+        /* 로그인 스타일 */
+        .login-box {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        .login-box h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            background-color: #2da44e;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-  <h1>원하는 사이트 검색</h1>
-  <h2>Welcome to Erebus!</h2>
-  
-  <input type="text" id="searchInput" placeholder="검색어를 입력하세요..." oninput="searchWord()">
-  
-  <div id="search-results">검색 결과가 여기에 표시됩니다.</div>
 
-  <!-- JavaScript 연결 -->
-  <script>
-    const words = {
-      A: { word: "Alejandra Iko Chuv", link: "https://www.livegore.com/203129/face-cut-in-half-still-alive" },
-      B: { word: "Best Gore Fun", link: "https://www.bsetgore.fun" },
-      C: { word: "CIVI", link: "https://civitai.com/models/7563/alice-nikke" },
-      D: { word: "Daily Best", link: "https://ilbe.com" },
-      D1: { word: "DuckDuckGo", link: "https://www.duckduckgo.com" },
-      E: { word: "Elephant", link: "https://example.com/elephant" },
-      F: { word: "FaceBook", link: "https://www.facebook.com" },
-      F1: { word: "FunkyTown", link: "https://www.wjswogkr.com" },
-      G: { word: "Gleb Korablyov", link: "https://archive.org/details/0508_20240514" },
-      G1: { word: "Google", link: "https://www.google.com" },
-      H: { word: "Horse", link: "https://example.com/horse" },
-      I: { word: "Instagram", link: "https://www.instagram.com" },
-      J: { word: "Jaguar", link: "https://example.com/jaguar" },
-      K: { word: "Knife M", link: "https://www.youtube.com/redirect?event=backstage_event&redir_token=QUFFLUhqbndSTS1WLVl0YmNZYXdfc2puUmF5XzF3Vm9Gd3xBQ3Jtc0trczJPX090bm1PSnZBUGJQaV82U19zRmdpdEtvOVI3MVk4XzRObFpFTnk1S3JOa1pUc3Jib25ZamFNTE81NXN5RHllU0wxWVFSSTFkb2hiY3lJdnZuQXJGVWFMSXB1aFNGYm4yT0tnUzA5Q2REazJxZw&q=https%3A%2F%2Fwatchpeopledie.tv%2Fh%2Fselfharm%2Fpost%2F24762%2Fknife-vag" },
-      L: { word: "Living Mexico", link: "https://elblogdelnarco.com/2018/07/26/video-horripilante-donde-sicarios-del-mayo-zambada-le-sacaron-el-corazon-a-un-sujeto-y-a-otro-lo-dec/" },
-      L1: { word: "LiveGore", link: "https://www.livegore.com" },
-      M: { word: "Monkey", link: "https://example.com/monkey" },
-      N: { word: "Naver", link: "https://www.naver.com" },
-      O: { word: "Octopus", link: "https://example.com/octopus" },
-      P: { word: "Penguin", link: "https://example.com/penguin" },
-      Q: { word: "Quokka", link: "https://example.com/quokka" },
-      R: { word: "Rabbit", link: "https://example.com/rabbit" },
-      S: { word: "sponsored by adidas", link: "https://www.vidlii.com/watch?v=yLDszwQxqvr" },
-      T: { word: "Twitter", link: "https://www.twitter.com" },
-      U: { word: "Ukraine 21", link: "https://watchpeopledie.tv/h/beating/post/24683/3-guys-1-hammer-theync-and" },
-      V: { word: "Vulture", link: "https://example.com/vulture" },
-      W: { word: "Whale", link: "https://example.com/whale" },
-      X: { word: "X Video", link: "https://www.xvideo.com" },
-      Y: { word: "Youtube", link: "https://www.youtube.com" },
-      Y1: { word: "Yadong Korea", link: "https://www.yako.red" },
-      Z: { word: "Zebra", link: "https://example.com/zebra" }
-    };
-
-    function searchByLetter(letter) {
-      const searchResults = document.getElementById('search-results');
-      searchResults.innerHTML = '';  // 검색 결과 초기화
-      const result = words[letter];
-      if (result) {
-        const { word, link } = result;
-        searchResults.innerHTML = `<a href="${link}" target="_blank">${word}</a>`;
-      } else {
-        searchResults.textContent = '검색 결과가 없습니다.';
-      }
-    }
-
-    function searchWord() {
-      const input = document.getElementById('searchInput').value.toUpperCase();
-      const searchResults = document.getElementById('search-results');
-      searchResults.innerHTML = '';  // 검색 결과 초기화
-
-      Object.keys(words).forEach(letter => {
-        const { word, link } = words[letter];
-        if (word.toUpperCase().startsWith(input)) {
-          searchResults.innerHTML += `<a href="${link}" target="_blank">${word}</a><br/>`;
+    <script>
+        // 로그인 상태 확인
+        if (sessionStorage.getItem("loggedIn") !== "true") {
+            document.body.innerHTML = `
+                <div class="login-box">
+                    <h2>접속하려면 아이디와 비밀번호 입력</h2>
+                    <input type="text" id="username" placeholder="아이디 입력">
+                    <input type="password" id="password" placeholder="비밀번호 입력">
+                    <button onclick="checkLogin()">입장</button>
+                    <div class="error" id="error"></div>
+                </div>
+            `;
+        } else {
+            // 로그인된 상태에서 검색 기능 보여주기
+            document.body.innerHTML = `
+                <h1>원하는 사이트 검색</h1>
+                <p>𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙩𝙤 𝙀𝙧𝙚𝙗𝙪𝙨!</p>
+                <input type="text" id="searchInput" onkeyup="searchWord()" placeholder="단어를 입력하세요...">
+                <div id="buttons">
+                    <button onclick="searchByLetter('A')">A</button>
+                    <button onclick="searchByLetter('B')">B</button>
+                    <button onclick="searchByLetter('C')">C</button>
+                    <button onclick="searchByLetter('D')">D</button>
+                    <button onclick="searchByLetter('E')">E</button>
+                    <button onclick="searchByLetter('F')">F</button>
+                    <button onclick="searchByLetter('G')">G</button>
+                    <button onclick="searchByLetter('H')">H</button>
+                    <button onclick="searchByLetter('I')">I</button>
+                    <button onclick="searchByLetter('J')">J</button>
+                    <button onclick="searchByLetter('K')">K</button>
+                    <button onclick="searchByLetter('L')">L</button>
+                    <button onclick="searchByLetter('M')">M</button>
+                    <button onclick="searchByLetter('N')">N</button>
+                    <button onclick="searchByLetter('O')">O</button>
+                    <button onclick="searchByLetter('P')">P</button>
+                    <button onclick="searchByLetter('Q')">Q</button>
+                    <button onclick="searchByLetter('R')">R</button>
+                    <button onclick="searchByLetter('S')">S</button>
+                    <button onclick="searchByLetter('T')">T</button>
+                    <button onclick="searchByLetter('U')">U</button>
+                    <button onclick="searchByLetter('V')">V</button>
+                    <button onclick="searchByLetter('W')">W</button>
+                    <button onclick="searchByLetter('X')">X</button>
+                    <button onclick="searchByLetter('Y')">Y</button>
+                    <button onclick="searchByLetter('Z')">Z</button>
+                </div>
+                <div id="search-results"></div>
+            `;
         }
-      });
 
-      if (searchResults.innerHTML === '') {
-        searchResults.textContent = '검색 결과가 없습니다.';
-      }
-    }
-  </script>
+        // 로그인 체크 함수
+        function checkLogin() {
+            const users = {
+                "KunWoo": "zerosanso",  // 아이디와 비밀번호 설정
+                "friend2": "password2"
+            };
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (users[username] && users[username] === password) {
+                sessionStorage.setItem("loggedIn", "true");
+                location.reload();  // 페이지 새로고침하여 로그인 후 화면 로드
+            } else {
+                document.getElementById("error").textContent = "아이디 또는 비밀번호가 틀렸습니다.";
+            }
+        }
+
+        // 검색 기능 (검색 단어 처리)
+        function searchWord() {
+            const input = document.getElementById("searchInput").value;
+            const results = document.getElementById("search-results");
+            results.innerHTML = '';  // 이전 검색 결과 지우기
+
+            if (input) {
+                // 여기에서 실제 검색 로직을 구현하면 됩니다.
+                results.innerHTML = `<a href="#">검색 결과: ${input}</a>`;
+            }
+        }
+
+        // 알파벳 검색 기능
+        function searchByLetter(letter) {
+            const results = document.getElementById("search-results");
+            results.innerHTML = `<a href="#">${letter}로 시작하는 검색</a>`;
+        }
+    </script>
 </body>
 </html>
