@@ -22,7 +22,17 @@
       border-radius: 5px;
     }
 
-    #search-results a {
+    button {
+      padding: 10px;
+      margin: 3px;
+      border: none;
+      background-color: #eee;
+      border-radius: 50%;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    #results a {
       display: block;
       color: blue;
       text-decoration: underline;
@@ -33,70 +43,100 @@
 <body>
 
   <h1>원하는 사이트 검색</h1>
-  <p><em>검색할 사이트를 입력하세요.</em></p>
+  <p><em>Welcome to Erebus!</em></p>
 
-  <input type="text" id="searchInput" placeholder="단어를 입력하세요..." onkeyup="searchWord()">
+  <input type="text" id="searchInput" placeholder="단어를 입력하세요..." onkeyup="search()">
 
-  <div id="search-results"></div>
+  <div id="alphabet"></div>
+  <div id="results"></div>
 
   <script>
-    const words = {
-      A: { word: "Alejandra Iko Chuv", link: "https://www.livegore.com/203129/face-cut-in-half-still-alive" },
-      B: { word: "Best Gore Fun", link: "https://www.bsetgore.fun" },
-      B1: { word: "Block Site Opener", link: "https://proxyium.com/website-unblocker" },
-      C: { word: "CIVI", link: "https://civitai.com/models/7563/alice-nikke" },
-      C1: { word: "Carro groce", link: "https://carro-groce.com/" },
-      C2: { word: "countryside", link: "https://www.youtube.com/redirect?event=backstage_event&redir_token=QUFFLUhqbWZxMUZZRnFobVFzYlozck9zanA4Y08wdGhlQXxBQ3Jtc0ttakRLWm1wbHlvMC1jWXNaUl83RkI5cVc1Nlo0YkFOZFhTSjY4MjktLXFzWjFTM0NQQ3dhZ2w1SXB3aW5KaV9MTWRiOUNPTGJXSU51RUZHSS1XMUxRQzRNQ1VzWXdCWjM0cW9DQWxLYnlPdDgtSlVzUQ&q=https%3A%2F%2Fwww.po-kaki-to.com%2Farchives%2F18672.html" },
-      D: { word: "Daily Best", link: "https://ilbe.com" },
-      D1: { word: "DuckDuckGo", link: "https://www.duckduckgo.com" },
-      D2: { word: "Dcinside", link: "https://www.dcinside.com/" },
-      E: { word: "El Blog del Narco", link: "https://elblogdelnarco.com/" },
-      F: { word: "FaceBook", link: "https://www.facebook.com" },
-      F1: { word: "FunkyTown", link: "https://www.gorecenter.com/funky-town-video/" },
-      G: { word: "Gleb Korablyov", link: "https://archive.org/details/0508_20240514" },
-      G1: { word: "Google", link: "https://www.google.com" },
-      H: { word: "Horse", link: "https://example.com/horse" },
-      I: { word: "Instagram", link: "https://www.instagram.com" },
-      J: { word: "Jaguar", link: "https://example.com/jaguar" },
-      K: { word: "Knife M", link: "https://www.youtube.com/redirect?event=backstage_event&redir_token=QUFFLUhqbndSTS1WLVl0YmNZYXdfc2puUmF5XzF3Vm9Gd3xBQ3Jtc0trczJPX090bm1PSnZBUGJQaV82U19zRmdpdEtvOVI3MVk4XzRObFpFTnk1S3JOa1pUc3Jib25ZamFNTE81NXN5RHllU0wxWVFSSTFkb2hiY3lJdnZuQXJGVWFMSXB1aFNGYm4yT0tnUzA5Q2REazJxZw&q=https%3A%2F%2Fwatchpeopledie.tv%2Fh%2Fselfharm%2Fpost%2F24762%2Fknife-vag" },
-      L: { word: "Living Mexico", link: "https://elblogdelnarco.com/2018/07/26/video-horripilante-donde-sicarios-del-mayo-zambada-le-sacaron-el-corazon-a-un-sujeto-y-a-otro-lo-dec/" },
-      L1: { word: "LiveGore", link: "https://www.livegore.com" },
-      M: { word: "Monkey", link: "https://example.com/monkey" },
-      N: { word: "Naver", link: "https://www.naver.com" },
-      O: { word: "Onion Site Opener", link: "https://proxyium.com/website-unblocker" },
-      P: { word: "PornHub", link: "https://pornhub.com" },
-      P1: { word: "Paraguay", link: "https://www.youtube.com/redirect?event=backstage_event&redir_token=QUFFLUhqbU1sMHNOTVZWZU5QM2VQQ1RhWTVfZmlaNmFkd3xBQ3Jtc0tuQ2dVLVN0bUdadWc4Nmd0dzQ3MkV2Zy10WElFOEZNTll3Nm5FRHdKM3hScFczYlhMN2RJVmVWRXNuNXh5VTVnZ2NaTXVnaTRLelRYM0wxcmZhb0xnM1FlOFExTm5SYUEzUTdQNmlkN0NFcEp4aF9qcw&q=https%3A%2F%2Fwww.po-kaki-to.com%2Farchives%2F01770.html" },
-      Q: { word: "Quokka", link: "https://example.com" },
-      R: { word: "Rabbit", link: "https://example.com/rabbit" },
-      S: { word: "sponsored by adidas", link: "https://www.vidlii.com/watch?v=yLDszwQxqvr" },
-      S1: { word: "Shotgun him Self", link: "https://www.youtube.com/redirect?event=comments&redir_token=QUFFLUhqbE1TaDcyd0RVQlZ6UHN4b0x4cHdQNVpxTDhCZ3xBQ3Jtc0ttek1lS240ZC04eGFTeXBEazgyNFVVcWVWRzY1ekFDc2czYUwzMGZiVmNLMnFUcGpqWVpWY09fdnVKMHY0cTljTjNXOHktRjgwOE9wN3dLSXpHSkxuWGFSRTV1VlV2OU13RTdmWG5LVVY2Z0NRN1NmSQ&q=https%3A%2F%2Fwatchpeopledie.tv%2Fh%2Fsuicide%2Fpost%2F7325%2Fronnie-mcnutt-full-suicide-video" },
-      S2: { word: "Seven Second", link: "https://www.youtube.com/redirect?event=comments&redir_token=QUFFLUhqbnd5T0lTUHp6MUtuUTM4LU9PYUU0ckxCeFBCUXxBQ3Jtc0ttQndxUk9vbkJHaDVORTlGZW9VZjhrUjlUd09OQmx2WjVLaGFJeWdRSDIxS2dERHJFc2VERzh4cWhxeTAtOW1xSFB4T29VLWFPWFpwcndxNW9lV2ZTNmxXN0wtTFY4QlV6eTBOVm4zVVZfdGZYR3ZkOA&q=https%3A%2F%2Fcarro-groce.com%2Fguro-douga%2F11798.html" },
-      T: { word: "Twitter", link: "https://www.twitter.com" },
-      U: { word: "Ukraine 21", link: "https://watchpeopledie.tv/h/beating/post/24683/3-guys-1-hammer-theync-and" },
-      V: { word: "Vulture", link: "https://example.com/vulture" },
-      W: { word: "Whale", link: "https://example.com/whale" },
-      X: { word: "X Video", link: "https://www.xvideo.com" },
-      Y: { word: "Youtube", link: "https://www.youtube.com" },
-      Y1: { word: "Yadong Korea", link: "https://www.yako.red" },
-      Z: { word: "Zebra", link: "https://example.com/zebra" }
+    const sites = [
+      "Alejandra Iko Chuv", "Best Gore Fun", "Block Site Opener", "CIVI", "Carro groce",
+      "countryside", "Daily Best", "DuckDuckGo", "Dcinside", "El Blog del Narco", "FaceBook",
+      "FunkyTown", "Gleb Korablev", "Google", "Horse", "Instagram", "Jaguar", "Knife M",
+      "Living Mexico", "LiveGore", "Monkey", "Naver", "Onion Site Opener", "Paraguay",
+      "PornHub", "Quokka", "Rabbit", "sponsored by adidas", "Shotgun him Self", "Seven Second",
+      "Twitter", "TheYNC", "Ukraine 21", "Vulture", "Whale", "X Video", "Youtube", "Yadong Korea", "Zebra"
+    ];
+
+    const links = {
+      "Alejandra Iko Chuv": "https://www.livegore.com/203129/face-cut-in-half-still-alive",
+      "Best Gore Fun": "https://www.bsetgore.fun",
+      "Block Site Opener": "https://proxyium.com/website-unblocker",
+      "CIVI": "https://civitai.com/models/7563/alice-nikke",
+      "Carro groce": "https://carro-groce.com/",
+      "countryside": "https://www.po-kaki-to.com/archives/18672.html",
+      "Daily Best": "https://ilbe.com",
+      "DuckDuckGo": "https://www.duckduckgo.com",
+      "Dcinside": "https://www.dcinside.com/",
+      "El Blog del Narco": "https://elblogdelnarco.com/",
+      "FaceBook": "https://www.facebook.com",
+      "FunkyTown": "https://www.gorecenter.com/funky-town-video/",
+      "Gleb Korablev": "https://archive.org/details/0508_20240514",
+      "Google": "https://www.google.com",
+      "Horse": "https://example.com/horse",
+      "Instagram": "https://www.instagram.com",
+      "Jaguar": "https://example.com/jaguar",
+      "Knife M": "https://watchpeopledie.tv/h/selfharm/post/24762/knife-vag",
+      "Living Mexico": "https://elblogdelnarco.com/2018/07/26/video-horripilante-donde-sicarios-del-mayo-zambada-le-sacaron-el-corazon-a-un-sujeto-y-a-otro-lo-dec/",
+      "LiveGore": "https://www.livegore.com",
+      "Monkey": "https://example.com/monkey",
+      "Naver": "https://www.naver.com",
+      "Onion Site Opener": "https://proxyium.com/website-unblocker",
+      "Paraguay": "https://www.po-kaki-to.com/archives/01770.html",
+      "PornHub": "https://pornhub.com",
+      "Quokka": "https://example.com",
+      "Rabbit": "https://example.com/rabbit",
+      "sponsored by adidas": "https://www.vidlii.com/watch?v=yLDszwQxqvr",
+      "Shotgun him Self": "https://watchpeopledie.tv/h/suicide/post/7325/ronnie-mcnutt-full-suicide-video",
+      "Seven Second": "https://carro-groce.com/guro-douga/11798.html",
+      "Twitter": "https://www.twitter.com",
+      "TheYNC": "https://theync.com",
+      "Ukraine 21": "https://watchpeopledie.tv/h/beating/post/24683/3-guys-1-hammer-theync-and",
+      "Vulture": "https://example.com/vulture",
+      "Whale": "https://example.com/whale",
+      "X Video": "https://www.xvideo.com",
+      "Youtube": "https://www.youtube.com",
+      "Yadong Korea": "https://www.yako.red",
+      "Zebra": "https://example.com/zebra"
     };
 
-    function searchWord() {
-      const input = document.getElementById('searchInput').value.toUpperCase();
-      const searchResults = document.getElementById('search-results');
-      searchResults.innerHTML = '';  // 검색 결과 초기화
-
-      Object.keys(words).forEach(key => {
-        const { word, link } = words[key];
-        if (word.toUpperCase().startsWith(input)) {
-          searchResults.innerHTML += `<a href="${link}" target="_blank">${word}</a><br/>`;
-        }
+    function displaySites(list) {
+      const resultDiv = document.getElementById("results");
+      resultDiv.innerHTML = "";
+      list.forEach(site => {
+        const a = document.createElement("a");
+        a.href = links[site] || "#";
+        a.textContent = site;
+        a.target = "_blank";
+        resultDiv.appendChild(a);
       });
+    }
 
-      if (searchResults.innerHTML === '') {
-        searchResults.textContent = '검색 결과가 없습니다.';
+    function search() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const filtered = sites.filter(site => site.toLowerCase().includes(input));
+      displaySites(filtered);
+    }
+
+    function setupAlphabetButtons() {
+      const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      const alphaDiv = document.getElementById("alphabet");
+
+      for (let ch of alphabet) {
+        const btn = document.createElement("button");
+        btn.textContent = ch;
+        btn.onclick = () => {
+          const filtered = sites.filter(site => site[0].toUpperCase() === ch);
+          displaySites(filtered);
+        };
+        alphaDiv.appendChild(btn);
       }
     }
+
+    setupAlphabetButtons();
+    displaySites(sites);
   </script>
 
 </body>
